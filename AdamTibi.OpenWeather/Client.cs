@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Globalization;
+using System.Web;
 using Newtonsoft.Json;
 
 namespace AdamTibi.OpenWeather;
@@ -7,7 +8,8 @@ public class Client : IClient
 {
     private readonly string _apiKey;
     private readonly HttpClient _httpClient;
-    private const string BASE_URL = "https://api.openweathermap.org/data/2.5";
+    private const string BASE_URL = "https://api.openweathermap.org/data/3.0";
+    private const string URL_TEMPLATE = "/onecall";
 
     public Client(string apiKey, HttpClient httpClient)
     {
@@ -15,13 +17,12 @@ public class Client : IClient
         _httpClient = httpClient;
     }
 
-    public async Task<OneCallResponse> OneCallAsync(decimal latitude, decimal longitude, IEnumerable<Excludes> excludes, Units unit)
+    public async Task<OneCallResponse> OneCallAsync(decimal latitude, decimal longitude, IEnumerable<Excludes> excludes, Units unit, string baseUrl = BASE_URL, string urlTemplate = URL_TEMPLATE)
     {
-        const string ONECALL_URL_TEMPLATE = "/onecall";
-        var uriBuilder = new UriBuilder(BASE_URL + ONECALL_URL_TEMPLATE);
+        var uriBuilder = new UriBuilder(baseUrl + urlTemplate);
         var query = HttpUtility.ParseQueryString("");
-        query["lat"] = latitude.ToString();
-        query["lon"] = longitude.ToString();
+        query["lat"] = latitude.ToString(CultureInfo.InvariantCulture);
+        query["lon"] = longitude.ToString(CultureInfo.InvariantCulture);
         query["appid"] = _apiKey;
         if (excludes is { } && excludes.Any())
         {

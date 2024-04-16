@@ -14,6 +14,7 @@ namespace AdamTibi.OpenWeather.Test.Unit;
 public class ClientTests
 {
     private const string ONECALL_BASE_URL = "https://api.openweathermap.org/data/2.5/onecall";
+    private const string ONECALL_BASE_URL_V3 = "https://api.openweathermap.org/data/3.0/onecall";
     private const string FAKE_KEY = "thisisafakeapikey";
     private const decimal GREENWICH_LATITUDE = 51.4769m;
     private const decimal GREENWICH_LONGITUDE = 0.0005m;
