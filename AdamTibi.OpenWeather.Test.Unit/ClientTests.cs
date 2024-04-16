@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AdamTibi.OpenWeather.Test.Unit;
+namespace Red.OpenWeather.Test.Unit;
 
 public class ClientTests
 {

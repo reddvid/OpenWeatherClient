@@ -1,5 +1,5 @@
 ﻿
-namespace AdamTibi.OpenWeather
+namespace Red.OpenWeather
 {
     public interface IClient
     {

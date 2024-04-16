@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AdamTibi.OpenWeather;
+namespace Red.OpenWeather;
 
 public enum Units
 {

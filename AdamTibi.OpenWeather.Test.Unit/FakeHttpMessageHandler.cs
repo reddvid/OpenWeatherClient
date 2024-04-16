@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AdamTibi.OpenWeather.Test.Unit
+namespace Red.OpenWeather.Test.Unit
 {
     public class FakeHttpMessageHandler : HttpMessageHandler
     {

@@ -2,7 +2,7 @@
 using System.Web;
 using Newtonsoft.Json;
 
-namespace AdamTibi.OpenWeather;
+namespace Red.OpenWeather;
 
 public class Client : IClient
 {
